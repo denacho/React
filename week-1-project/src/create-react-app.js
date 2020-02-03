@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 
-const optionalChaining = (object) => {
-    return object?.bar?.buzz;
+const optionalChaining = object => {
+  return object?.bar?.buzz;
 };
+const Import = "";
 
-export { optionalChaining };
+export { optionalChaining, Import };
