@@ -17,7 +17,7 @@ const ProductListings = ({ products }) => {
     products.forEach(product => {
         productsByCategory[product.category].push(product);
     });
-
+ya
     let $products = [];
     // Fills $products with listings for categories and items
     for (let category in productsByCategory) {
