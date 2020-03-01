@@ -7,6 +7,7 @@ import { Ex4 } from "./ex.js";
 import { Ex5 } from "./ex.js";
 import { Ex6 } from "./ex.js";
 import { Ex7 } from "./ex.js";
+import { Ex8 } from "./ex.js";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Ex5 />
       <Ex6 />
       <Ex7 />
+      <Ex8 sentence={"This is the extra exercise of UseState"} />
     </div>
   );
 }

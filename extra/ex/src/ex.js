@@ -28,7 +28,7 @@ const Ex3 = () => {
     let tag = "";
     if (count % 3 === 0 && count !== 0) tag += "Fizz";
     if (count % 5 === 0 && count !== 0) tag += "Buzz";
-    if (tag == "") tag = count;
+    if (tag === "") tag = count;
 
     return tag;
   };
@@ -103,7 +103,7 @@ const Ex7 = () => {
       setColor("YELLOW");
     }
   };
-  const handleGreeClick = () => {
+  const handleGreenClick = () => {
     if (color !== "green") {
       setColor("GREEN");
     }
@@ -117,10 +117,37 @@ const Ex7 = () => {
     <div>
       <p>'{color}'</p>
       <button onClick={handleYellowClick}>yellow</button>
-      <button onClick={handleGreeClick}>green</button>
+      <button onClick={handleGreenClick}>green</button>
       <button onClick={handleBlueClick}>blue</button>
     </div>
   );
 };
 
-export { Ex1, Ex2, Ex3, Ex4, Ex5, Ex6, Ex7 };
+const Ex8 = ({ sentence }) => {
+  const splitWords = sentence.split(" ");
+  console.log("splitWords", splitWords);
+  console.log("sentence", sentence);
+
+  const [word, setWords] = useState("");
+
+  const setNextWord = () => {
+    const currentIndex = splitWords.findIndex(splitWord => splitWord === word);
+    setWords(splitWords[currentIndex + 1]);
+    console.log("currentIndex", currentIndex);
+  };
+
+  const setPreviousWord = () => {
+    const currentIndex = splitWords.findIndex(splitWord => splitWord === word);
+    setWords(splitWords[currentIndex - 1]);
+  };
+
+  return (
+    <div>
+      <p>{word}</p>
+      <button onClick={setPreviousWord}>Previous</button>
+      <button onClick={setNextWord}>Next</button>
+    </div>
+  );
+};
+
+export { Ex1, Ex2, Ex3, Ex4, Ex5, Ex6, Ex7, Ex8 };
